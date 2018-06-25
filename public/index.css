@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+p, label, input, li, a, h1, h2, h3, h4, h5, h6, button {
+   font-family: 'Quicksand', sans-serif !important;
+}
+
+.modal, .modal:hover {
+   outline: none;
+}
+
+i[class="fa fa-search"] {
+   font-size: 20px;
+   transition: .2s;
+   cursor: pointer;
+}
+
+.userSearchModal {
+   background: #36D1DC;  /* fallback for old browsers */
+   background: -webkit-linear-gradient(to right, #5B86E5, #36D1DC);  /* Chrome 10-25, Safari 5.1-6 */
+   background: linear-gradient(to right, #5B86E5, #36D1DC); 
+}
+
+.brand-logo {
+   font-weight: bold;
+}
+
+.navBackgroundColor {
+   background: #7F7FD5;
+   background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+   background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+   padding: 0px 20px;
+}
+
+#searchUserModal > * {
+   color: white;
+   border-color: white !important;
+}
+
+#userNameInput {
+   color: white;
+   border-color: white !important;
+}
+
+label[for="userNameInput"] {
+   color: white !important;
+}
+
+#userNameFetch {
+   background-color: #6DD5FA !important;
+}
+
+#showSuccessModal {
+   background: #007991;  /* fallback for old browsers */
+   background: -webkit-linear-gradient(to right, #78ffd6, #007991);  /* Chrome 10-25, Safari 5.1-6 */
+   background: linear-gradient(to right, #78ffd6, #007991); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
+}
+
+#showErrorModal {
+   background: #2193b0;  /* fallback for old browsers */
+   background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0);  /* Chrome 10-25, Safari 5.1-6 */
+   background: linear-gradient(to right, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */   
+}
+
+#successTitle,
+#successDescription,
+#errorTitle,
+#errorDescription,
+.smiley,
+.cryface {
+   color: white;
+}
+
+#userimage_container {
+   width: 100%;
+   position: relative;
+}
+
+#userimage_container > img {
+   width: 100%;
+   position: relative;
+   border-radius: 10px;
+}
+
+ul.tabs > li:hover {
+   background-color: rgba(54, 209, 220, 0.233);
+}
+
+ul.tabs > li:active {
+   background-color: rgba(23, 137, 243, 0.336) !important;
+}
+
+a[href="#repos"],
+a[href="#stars"],
+a[href="#following"],
+a[href="#followers"] {
+   color: #36D1DC !important;
+}
+
+.visit_profile_button {
+   width: 100%;
+   background-color: #2193b0 !important;
+}
+
+.visit_profile_button > a {
+   color: white !important;
+}

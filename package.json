@@ -1,10 +1,14 @@
 {
   "name": "githubber",
   "version": "1.0.0",
-  "description": "",
+  "description": "An application to fetch github user's profile",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "engine": {
+    "node": "10.2.1"
   },
   "author": "Suyash Purwar",
   "license": "MIT",
