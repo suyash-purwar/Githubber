@@ -7,7 +7,7 @@
    <!-- My CSS -->
    <link rel = "stylesheet" href = "index.css">
    <!-- Materialize CSS -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
    <!-- Font awesome for icons -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    <title>Githubber</title>
@@ -32,12 +32,19 @@
          <p class = "center">Enter your name and we will fetch your profile from github</p>
 
          <div class = "row">
-            <div class = "input-field col s10 offset-s1">
-               <input type = "text" value = "InduMalik" class = "validate" id = "userNameInput">
-               <label for = "userNameInput">Github User name</label>
-               <br>
-               <button class = "btn btn-waves" id = "userNameFetch">Find me</button>
-            </div>
+            <form method = "POST" action = "fetchID" class = "col s12">
+               <div class = "row">
+                  <div class = "input-field col s10 offset-s1">
+                     <label for = "userNameInput">Github user name</label>
+                     <input type = "text" name = "name" class = "validate" id = "userNameInput" autocomplete="off">
+                  </div>
+               </div>
+               <div class = "row">
+                  <div class = "input-field col s10 offset-s1">
+                     <input type = "submit" class = "btn btn-waves" value = "Fine me">
+                  </div>
+               </div>
+            </form>
          </div>
       </div>
    </div>
@@ -110,8 +117,7 @@
       </div>
    </div>
 
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
    <script src = "render.js"></script>
    <script src = "client.js"></script>
 </body>

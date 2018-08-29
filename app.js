@@ -2,27 +2,21 @@ const express = require("express");
 const axios = require("axios");
 const bodyParser = require("body-parser");
 
-const app = express();
+const fetchID = require("./routes/userRoutes");
 
-// Setting view engine
-app.set('view engine', "ejs");
-// Setting static folder
+const app = express();
+const port = process.env.PORT || 3000;
+
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
-// Setting routes
-const userRoutes = require("./routes/userRoutes");
-
-app.use(userRoutes, '/fetchUserName');
-
-// Setting port
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-	console.log("Server is up on port 3000");
-});
+app.use('/fetchID', fetchID);
+app.set('view engine', "ejs");
 
 app.get('/', (req, res) => {
 	res.render("index.ejs");
 });
 
+app.listen(port, () => {
+	console.log("Server is up on port 3000");
+});
