@@ -1,0 +1,21 @@
+<% if (repos.length > 0) { %>
+   <ul class = "collection">
+      <% repos.forEach(repo => { %>
+         <li class = "collection-item">
+            <a href = "<%= repo.url %>"><h5><%= repo.name %></h5></a>
+            <p><%= repo.description %></p>
+            <div class = "repo-sub-data">
+               <small><%= repo.language %></small>
+               <small><i class = "fa fa-eye"></i><%= repo.watchers_count %></small>
+               <small><i class = "fa fa-star"></i><%= repo.stargazers_count %></small>
+               <small><i class = "fa fa-code-fork"></i><%= repo.forks_count %></small>
+            </div>
+         </li>
+      <% }); %>
+   </ul>
+<% } else { %>
+   <div style = "padding: 20px; width: 80%; border-radius: 10px; margin: auto; color: grey">
+      <h1 class = "center" style = "font-size: 110px;">NO!</h1>
+      <h4 class = "center" >Respositories</h4>
+   </div>
+<% } %>

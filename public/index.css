@@ -113,3 +113,15 @@ a[href="#followers"] {
 .visit_profile_button > a {
    color: white !important;
 }
+
+.repo-sub-data {
+   display: inline;
+}
+
+.repo-sub-data > small {
+   padding-right: 10px;
+}
+
+.repo-sub-data > small > i {
+   padding-right: 5px;
+}

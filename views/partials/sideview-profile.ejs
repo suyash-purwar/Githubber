@@ -25,26 +25,34 @@
 
 <hr>
 
-<% if (typeof data.email === 'string') { %>
-      <p id = "location" style = "line-height: 2px">
-      <i class = "fa fa-envelope" style = "padding-right: 5px; font-size: 18px;"></i>
-      <span id = "location">
-            <%= data.email %>
-      </span>
-      </p>
-<% } %>
 <% if (typeof data.company === 'string') { %>
-      <p id = "company_para" style = "line-height: 4px">
-      <i class = "fa fa-group" style = "padding-right: 5px"></i>
-      <span id = "company">
+      <p style = "line-height: 2px">
+      <i class = "fa fa-group" style = "padding-right: 5px; font-size: 18px;"></i>
+      <span>
             <%= data.company %>
       </span>
       </p>
 <% } %>
+<% if (typeof data.email === 'string') { %>
+      <p style = "line-height: 2px">
+      <i class = "fa fa-envelope" style = "padding-right: 5px; font-size: 18px;"></i>
+      <span>
+            <%= data.email %>
+      </span>
+      </p>
+<% } %>
+<% if (data.blog != "") { %>
+      <p style = "line-height: 4px">
+      <i class = "fa fa-link" style = "padding-right: 5px"></i>
+      <span>
+            <a href = "<%= data.blog %>" target="_block"><%= data.blog %></a>
+      </span>
+      </p>
+<% } %>
 <% if (typeof data.location === 'string') { %>
-      <p id = "location" style = "line-height: 2px">
+      <p style = "line-height: 2px">
       <i class = "fa fa-location-arrow" style = "padding-right: 5px; font-size: 18px;"></i>
-      <span id = "location">
+      <span>
             <%= data.location %>
       </span>
       </p>
