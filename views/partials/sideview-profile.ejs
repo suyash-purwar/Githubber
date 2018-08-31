@@ -1,0 +1,51 @@
+
+<div id = "userimage_container">
+      <img src = "<%= data.avatarUrl %>" alt = "user">
+</div>
+
+<% if (typeof data.name === 'string') {%>
+      <h5 id = "name" style = "line-height: 10px;">
+      <%= data.name %>
+      </h5>
+<% } %>
+
+<h6 id = "user_name">
+      <%= data.loginName %>
+</h6>
+
+<p id = "bio">
+      <% if (typeof data.bio === 'string') { %>
+      <%= data.bio %>
+      <% } %>
+</p>
+
+<button class = "btn btn-waves visit_profile_button" id = "visit_profile_button">
+      <a href = "<%= data.profileUrl %>">Visit Profile</a>
+</button>
+
+<hr>
+
+<% if (typeof data.email === 'string') { %>
+      <p id = "location" style = "line-height: 2px">
+      <i class = "fa fa-envelope" style = "padding-right: 5px; font-size: 18px;"></i>
+      <span id = "location">
+            <%= data.email %>
+      </span>
+      </p>
+<% } %>
+<% if (typeof data.company === 'string') { %>
+      <p id = "company_para" style = "line-height: 4px">
+      <i class = "fa fa-group" style = "padding-right: 5px"></i>
+      <span id = "company">
+            <%= data.company %>
+      </span>
+      </p>
+<% } %>
+<% if (typeof data.location === 'string') { %>
+      <p id = "location" style = "line-height: 2px">
+      <i class = "fa fa-location-arrow" style = "padding-right: 5px; font-size: 18px;"></i>
+      <span id = "location">
+            <%= data.location %>
+      </span>
+      </p>
+<% } %>

@@ -1,5 +1,4 @@
 const express = require("express");
-const axios = require("axios");
 const bodyParser = require("body-parser");
 
 const fetchID = require("./routes/userRoutes");
@@ -14,7 +13,11 @@ app.use('/fetchID', fetchID);
 app.set('view engine', "ejs");
 
 app.get('/', (req, res) => {
-	res.render("index.ejs");
+	res.render("index.ejs", {
+		isVisible: false,
+		showErrorModal: undefined,
+		showSuccessModal: undefined
+	});
 });
 
 app.listen(port, () => {

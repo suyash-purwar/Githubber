@@ -14,108 +14,33 @@
 </head>
 <body>
    <!-- Navigation bar -->
-   <nav class = "navBackgroundColor">
-      <div class = "nav-wrappper">
-         <a href = "#" class = "brand-logo center">Githubber</a>
-         <ul class = "right">
-            <li href = "#searchUserModal" class = "modal-trigger">
-               <i class = "fa fa-search"></i>
-            </li>
-         </ul>
-      </div>
-   </nav>
+   <%- include('partials/nav.ejs') %>
+   <%- include('partials/successmodel.ejs') %>
+   <%- include('partials/errormodel.ejs') %>
 
-   <!-- Modal for getting user's github user name -->
-   <div id = "searchUserModal" class = "modal userSearchModal">
-      <div class = "modal-content" style = "padding: 30px 10px">
-         <h3 class = "center"><b>One more step!</b></h3>
-         <p class = "center">Enter your name and we will fetch your profile from github</p>
-
+   <% if (isVisible) { %>
+      <div class = "container" id = "userprofile-container">
+         <br><br>
          <div class = "row">
-            <form method = "POST" action = "fetchID" class = "col s12">
-               <div class = "row">
-                  <div class = "input-field col s10 offset-s1">
-                     <label for = "userNameInput">Github user name</label>
-                     <input type = "text" name = "name" class = "validate" id = "userNameInput" autocomplete="off">
-                  </div>
+            <div class = "col s4">
+               <%- include('partials/sideview-profile.ejs', {data: data, isVisible: isVisible}) -%>
+            </div>
+
+            <div class = "col s8">
+               <ul class = "tabs tabs-fixed-width z-depth-1 tab-demo" style = "box-shadow: none; border-bottom: 2px  #36D1DC solid">
+                  <li class = "tab"><a class = "active" href = "#repos">Repositories</a></li>
+                  <li class = "tab"><a href = "#stars">Stars</a></li>
+                  <li class = "tab"><a href = "#followers">Followers</a></li>
+                  <li class = "tab"><a href = "#following">Following</span></a></li>
+               </ul>
+
+               <div id = "repos">
+                     
                </div>
-               <div class = "row">
-                  <div class = "input-field col s10 offset-s1">
-                     <input type = "submit" class = "btn btn-waves" value = "Fine me">
-                  </div>
-               </div>
-            </form>
-         </div>
-      </div>
-   </div>
-
-   <!-- Modal for showing errors -->
-   <div id = "showErrorModal" class = "modal">
-      <div class = "modal-content" style = "padding: 30px 10px">
-            <center>
-               <i class = "cryface fa fa-frown-o" style = "font-size: 100px;"></i>
-            </center>
-            <h3 class = "center" id = "errorTitle"></h3>
-            <p class = "center" id = "errorDescription"></p>
-         </div>
-      </div>
-   </div>
-
-   <!-- Modal for showing sucess messages -->
-   <div id = "showSuccessModal" class = "modal">
-      <div class = "modal-content" style = "padding: 30px 10px">
-         <center>
-            <i class = "smiley fa fa-smile-o" style = "font-size: 100px;"></i>
-         </center>
-         <h3 class = "center" id = "successTitle"></h3>
-         <p class = "center" id = "successDescription"></p>
-      </div>
-   </div>
-
-   <div class = "container" id = "userprofile-container" style = "display: none">
-      <br><br>
-      <div class = "row">
-         <div class = "col s4">
-            <div id = "userimage_container">
-               
-            </div>
-            <h5 id = "name" style = "line-height: 10px;"></h5>
-            <h6 id = "user_name"></h6>
-            
-            <!-- Bio of user will come here if any is in data -->
-            <p id = "bio"></p>
-
-            <!-- Link to user profile will come here -->
-            <button class = "btn btn-waves visit_profile_button" id = "visit_profile_button"></button>
-
-            <hr>
-
-            <p id = "company_para" style = "line-height: 4px">
-                  <i class = "fa fa-group" style = "padding-right: 5px"></i>
-                  <span id = "company"></span>
-            </p>
-            <p id = "location_para" style = "line-height: 2px">
-                  <i class = "fa fa-location-arrow" style = "padding-right: 5px; font-size: 18px;"></i>
-                  <span id = "location"></span>
-            </p>
-            <div id = "blog-container">
-               <!-- Blog link will come here if any is in data -->
-            </div>
-         </div>
-         <div class = "col s8">
-            <ul class = "tabs tabs-fixed-width z-depth-1 tab-demo" style = "box-shadow: none; border-bottom: 2px  #36D1DC solid">
-               <li class = "tab"><a class = "active" href = "#repos">Repositories</a></li>
-               <li class = "tab"><a href = "#stars">Stars</a></li>
-               <li class = "tab"><a href = "#followers">Followers</a></li>
-               <li class = "tab"><a href = "#following">Following</span></a></li>
-            </ul>
-
-            <div id = "repos">
-                  
             </div>
          </div>
       </div>
-   </div>
+   <% } %>
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
    <script src = "render.js"></script>

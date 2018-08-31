@@ -31,7 +31,7 @@ i[class="fa fa-search"] {
    padding: 0px 20px;
 }
 
-#searchUserModal > * {
+.userSearchModal > * {
    color: white;
    border-color: white !important;
 }
