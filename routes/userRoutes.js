@@ -13,10 +13,6 @@ router.post('/', (request, response) => {
       if (typeof res.data === 'object') {
          response.render('index', {
             data: {
-               type: 'success',
-               showSuccessModal: true,
-               showErrorModal: false,
-               
                loginName: res.data.login,
                email: res.data.email,
                avatarUrl: res.data.avatar_url,
@@ -30,15 +26,10 @@ router.post('/', (request, response) => {
                followers: res.data.followers,
                following: res.data.following
             },
-            isVisible: true
-         });
-      } else {
-         response.render('index', {
-            type: 'error',
-            showErrorModal: true,
-            showSuccessModal: false,
-            errorTitle: "Can't find you!",
-            errorDescription: "Please enter a valid name"
+            isVisible: true,
+            type: 'success',
+            showSuccessModal: true,
+            showErrorModal: false
          });
       }
 
@@ -46,10 +37,11 @@ router.post('/', (request, response) => {
    .catch((e) => {
       response.render('index', {
          type: 'Error',
+         isVisible: false,
          showErrorModal: true,
          showSuccessModal: false,
-         errorTitle: 'Not connected to Internet!',
-         causeDescription: 'Looks like you are not connected to internet. Thus, we are unable to connect to github servers'
+         errorTitle: "Awww... Something went wrong",
+         errorDescription: 'Check your internet connection and the name you entered'
       })
    });
 });

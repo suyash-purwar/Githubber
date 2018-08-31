@@ -1,5 +1,35 @@
 // Function for opening the Username input modal
 document.addEventListener('DOMContentLoaded', () => {
    const userSearchModal = document.querySelector("#modal");
-   const instances = M.Modal.init(userSearchModal, {});
+   const instances = M.Modal.init(userSearchModal, {dismissible: false});
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+   const successModal = document.querySelector("#successModal");
+   const success = M.Modal.init(successModal, {});
+
+   try {
+      success.open();
+   
+      setTimeout(() => {
+         success.close();
+      }, 3000);
+   } catch (e) {
+      
+   }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+   const errorModal = document.querySelector("#errorModal");
+   const error = M.Modal.init(errorModal, {});
+
+   try {
+      error.open();
+   
+      setTimeout(() => {
+         error.close();
+      }, 3000);
+   } catch (e) {
+      
+   }
 });

@@ -15,8 +15,12 @@
 <body>
    <!-- Navigation bar -->
    <%- include('partials/nav.ejs') %>
-   <%- include('partials/successmodel.ejs') %>
-   <%- include('partials/errormodel.ejs') %>
+   <% if (showSuccessModal) { %>
+      <%- include('partials/successmodal.ejs') %>
+   <% } %>
+   <% if (showErrorModal) { %>
+      <%- include('partials/errormodal.ejs', {title: errorTitle, desc: errorDescription}) %>
+   <% } %>
 
    <% if (isVisible) { %>
       <div class = "container" id = "userprofile-container">
@@ -35,7 +39,7 @@
                </ul>
 
                <div id = "repos">
-                     
+                  
                </div>
             </div>
          </div>
