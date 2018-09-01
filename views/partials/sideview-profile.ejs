@@ -1,59 +1,58 @@
-
 <div id = "userimage_container">
-      <img src = "<%= data.avatarUrl %>" alt = "user">
+      <img src = "<%= profile.avatarUrl %>" alt = "user">
 </div>
 
-<% if (typeof data.name === 'string') {%>
+<% if (typeof profile.name === 'string') {%>
       <h5 id = "name" style = "line-height: 10px;">
-      <%= data.name %>
+      <%= profile.name %>
       </h5>
 <% } %>
 
 <h6 id = "user_name">
-      <%= data.loginName %>
+      <%= profile.loginName %>
 </h6>
 
 <p id = "bio">
-      <% if (typeof data.bio === 'string') { %>
-      <%= data.bio %>
+      <% if (typeof profile.bio === 'string') { %>
+      <%= profile.bio %>
       <% } %>
 </p>
 
 <button class = "btn btn-waves visit_profile_button" id = "visit_profile_button">
-      <a href = "<%= data.profileUrl %>">Visit Profile</a>
+      <a href = "<%= profile.profileUrl %>">Visit Profile</a>
 </button>
 
 <hr>
 
-<% if (typeof data.company === 'string') { %>
+<% if (typeof profile.company === 'string') { %>
       <p style = "line-height: 2px">
       <i class = "fa fa-group" style = "padding-right: 5px; font-size: 18px;"></i>
       <span>
-            <%= data.company %>
+            <%= profile.company %>
       </span>
       </p>
 <% } %>
-<% if (typeof data.email === 'string') { %>
+<% if (typeof profile.email === 'string') { %>
       <p style = "line-height: 2px">
       <i class = "fa fa-envelope" style = "padding-right: 5px; font-size: 18px;"></i>
       <span>
-            <%= data.email %>
+            <%= profile.email %>
       </span>
       </p>
 <% } %>
-<% if (data.blog != "") { %>
+<% if (profile.blog != "") { %>
       <p style = "line-height: 4px">
       <i class = "fa fa-link" style = "padding-right: 5px"></i>
       <span>
-            <a href = "<%= data.blog %>" target="_block"><%= data.blog %></a>
+            <a href = "<%= profile.blog %>" target="_block"><%= profile.blog %></a>
       </span>
       </p>
 <% } %>
-<% if (typeof data.location === 'string') { %>
+<% if (typeof profile.location === 'string') { %>
       <p style = "line-height: 2px">
       <i class = "fa fa-location-arrow" style = "padding-right: 5px; font-size: 18px;"></i>
       <span>
-            <%= data.location %>
+            <%= profile.location %>
       </span>
       </p>
 <% } %>
