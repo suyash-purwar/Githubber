@@ -16,7 +16,8 @@ app.get('/', (req, res) => {
 	res.render("index.ejs", {
 		isVisible: false,
 		showErrorModal: undefined,
-		showSuccessModal: undefined
+		showSuccessModal: undefined,
+		isHome: true,
 	});
 });
 

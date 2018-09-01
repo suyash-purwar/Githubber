@@ -15,7 +15,6 @@
    <title>Githubber</title>
 </head>
 <body>
-   <!-- Navigation bar -->
    <%- include('partials/nav.ejs') %>
    <% if (showSuccessModal) { %>
       <%- include('partials/successmodal.ejs') %>
@@ -23,6 +22,15 @@
    <% if (showErrorModal) { %>
       <%- include('partials/errormodal.ejs', {title: errorTitle, desc: errorDescription}) %>
    <% } %>
+
+   <% try { %>
+      <% if (isHome) { %>
+         <%- include('partials/home-content.ejs') %>
+      <% }%>
+   <% } catch (e) { %>
+
+   <% } %>
+
 
    <% if (isVisible) { %>
       <div class = "container" id = "userprofile-container">
@@ -61,7 +69,6 @@
    <% } %>
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-   <script src = "render.js"></script>
    <script src = "client.js"></script>
 </body>
 </html>
