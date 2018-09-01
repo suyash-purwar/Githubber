@@ -7,14 +7,16 @@ router.post('/', (request, response) => {
       axios.get(`https://api.github.com/users/${request.body.name}?client_id=a1dc8059a2fe281dcb31&client_secret=ce7948563dc52a43c157bbd9a7f28157541bf0fb`),
       axios.get(`https://api.github.com/users/${request.body.name}/repos?client_id=a1dc8059a2fe281dcb31&client_secret=ce7948563dc52a43c157bbd9a7f28157541bf0fb`),
       axios.get(`https://api.github.com/users/${request.body.name}/followers?client_id=a1dc8059a2fe281dcb31&client_secret=ce7948563dc52a43c157bbd9a7f28157541bf0fb`),
-      axios.get(`https://api.github.com/users/${request.body.name}/following?client_id=a1dc8059a2fe281dcb31&client_secret=ce7948563dc52a43c157bbd9a7f28157541bf0fb`)
+      axios.get(`https://api.github.com/users/${request.body.name}/following?client_id=a1dc8059a2fe281dcb31&client_secret=ce7948563dc52a43c157bbd9a7f28157541bf0fb`),
+      axios.get(`https://api.github.com/users/${request.body.name}/starred?client_id=a1dc8059a2fe281dcb31&client_secret=ce7948563dc52a43c157bbd9a7f28157541bf0fb`)
    ])
-   .then(axios.spread((profileRes, reposRes, followersRes, followingRes) => {
+   .then(axios.spread((profileRes, reposRes, followersRes, followingRes, starredRepoRes) => {
       response.render('index', { 
          repos: filterReposData(reposRes),
          followers: filterFollowersData(followersRes),
          following: filterFollowingData(followingRes),
          profile: returnProfileProps(profileRes),
+         starredRepo: filterStarredRepoData(starredRepoRes),
          isVisible: true,
          type: 'success',
          showSuccessModal: true,
@@ -82,6 +84,20 @@ filterFollowingData = (following) => {
          login: person.login,
          avatar_url: person.avatar_url,
          html_url: person.html_url
+      }
+   });
+}
+
+filterStarredRepoData = (starredRepo) => {
+   return starredRepo.data.map(repo => {
+      return {
+         name: repo.name,
+         url: repo.html_url,
+         description: repo.description,
+         language: repo.language,
+         forks_count: repo.forks_count,
+         stargazers_count: repo.stargazers_count,
+         watchers_count: repo.watchers_count
       }
    });
 }

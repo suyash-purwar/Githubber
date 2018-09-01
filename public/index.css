@@ -99,10 +99,18 @@ ul.tabs > li:active {
 }
 
 a[href="#repos"],
-a[href="#stars"],
+a[href="#starred"],
 a[href="#following"],
 a[href="#followers"] {
    color: #36D1DC !important;
+}
+
+.active {
+   color: #2193b0 !important;
+}
+
+.indicator {
+   background-color: #36D1DC !important;
 }
 
 .visit_profile_button {

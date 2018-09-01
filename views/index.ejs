@@ -36,7 +36,8 @@
                <ul class = "tabs tabs-fixed-width z-depth-1 tab-demo" style = "box-shadow: none; border-bottom: 2px  #36D1DC solid">
                   <li class = "tab"><a class = "active" href = "#repos">Repositories</a></li>
                   <li class = "tab"><a href = "#followers">Followers</a></li>
-                  <li class = "tab"><a href = "#following">Following</span></a></li>
+                  <li class = "tab"><a href = "#following">Following</a></li>
+                  <li class = "tab"><a href = "#starred">Starred</a></li>
                </ul>
 
                <div id = "repos" >
@@ -49,6 +50,10 @@
 
                <div id = "following">
                   <%- include('partials/following', {following: following}) %>
+               </div>
+
+               <div id = "starred">
+                  <%- include('partials/repos', {repos: starredRepo}) %>
                </div>
             </div>
          </div>
