@@ -7,6 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
    const instances = M.Modal.init(userSearchModal, {dismissible: false});
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+   var elems = document.querySelectorAll('.fixed-action-btn');
+   var instances = M.FloatingActionButton.init(elems, {});
+ });
+
 document.addEventListener('DOMContentLoaded', () => {
    const successModal = document.querySelector("#successModal");
    const success = M.Modal.init(successModal, {});

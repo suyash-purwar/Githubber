@@ -4,6 +4,39 @@ p, label, input, li, a, h1, h2, h3, h4, h5, h6, button {
    font-family: 'Quicksand', sans-serif !important;
 }
 
+.facebook, .facebook:hover {
+   background-color: #3B5998 !important;
+   color: white;
+}
+
+.google, .google:hover {
+   background-color: #DB4437 !important;
+   color: white;
+}
+
+.twitter, .twitter:hover {
+   background-color: #1DA1F2 !important;
+   color: white;
+}
+
+.linkedin, .linkedin:hover {
+   background-color: #0077b5 !important;
+   color: white;
+}
+
+.whatsapp, .whatsapp:hover {
+   background-color: #25D366 !important;
+   color: white
+}
+
+.facebook > i,
+.google > i,
+.twitter > i,
+.linkedin > i,
+.whatsapp > i{
+   font-size: 15px !important;
+}
+
 .modal, .modal:hover {
    outline: none;
 }

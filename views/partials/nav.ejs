@@ -1,37 +1,37 @@
 <nav class = "navBackgroundColor">
-      <div class = "nav-wrappper">
-         <a href = "/" class = "brand-logo center">GithubFind</a>
-         <ul class = "right">
-            <li href = "#modal" class = "modal-trigger">
-               <i class = "fa fa-search"></i>
-            </li>
-            <li>
-            	<a target = "_blank" href = "https://github.com/Suyash-Purwar/githubber"><i class = "fa fa-github"></i></a>
-            </li>
-         </ul>
-      </div>
-   </nav>
+	<div class = "nav-wrappper">
+		<a href = "/" class = "brand-logo center">GithubFind</a>
+		<ul class = "right">
+			<li href = "#modal" class = "modal-trigger">
+				<i class = "fa fa-search"></i>
+			</li>
+			<li>
+				<a target = "_blank" href = "https://github.com/Suyash-Purwar/githubber"><i class = "fa fa-github"></i></a>
+			</li>
+		</ul>
+	</div>
+</nav>
 
-   <!-- Modal for getting user's github user name -->
-   <div id = "modal" class = "modal userSearchModal">
-      <div class = "modal-content" style = "padding: 30px 10px">
-         <h3 class = "center"><b>One more step!</b></h3>
-         <p class = "center">Enter your name and we will fetch your profile from github</p>
+<!-- Modal for getting user's github user name -->
+<div id = "modal" class = "modal userSearchModal">
+	<div class = "modal-content" style = "padding: 30px 10px">
+		<h3 class = "center"><b>One more step!</b></h3>
+		<p class = "center">Enter your name and we will fetch your profile from github</p>
 
-         <div class = "row">
-            <form method = "POST" action = "fetchID" class = "col s12">
-               <div class = "row">
-                  <div class = "input-field col s10 offset-s1">
-                     <label for = "userNameInput">Github user name</label>
-                     <input type = "text" name = "name" class = "validate" id = "userNameInput" autocomplete="off">
-                  </div>
-               </div>
-               <div class = "row">
-                  <div class = "input-field col s10 offset-s1">
-                     <input type = "submit" class = "btn btn-waves" value = "Find me">
-                  </div>
-               </div>
-            </form>
-         </div>
-      </div>
-   </div>
+		<div class = "row">
+			<form method = "POST" action = "fetchID" class = "col s12">
+				<div class = "row">
+					<div class = "input-field col s10 offset-s1">
+						<label for = "userNameInput">Github user name</label>
+						<input type = "text" name = "name" class = "validate" id = "userNameInput" autocomplete="off">
+					</div>
+				</div>
+				<div class = "row">
+					<div class = "input-field col s10 offset-s1">
+						<input type = "submit" class = "btn btn-waves" value = "Find me">
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

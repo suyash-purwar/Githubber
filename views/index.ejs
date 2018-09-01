@@ -10,7 +10,7 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
    <!-- Font awesome for icons -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   <script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5b8b19865f7cb000119f5aad&product=custom-share-buttons' async='async'></script>
+   <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5b8b19865f7cb000119f5aad&product=custom-share-buttons"></script>
    <meta property="og:image" content="feature_img.png"/>
    <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
    <title>Githubber</title>
@@ -32,6 +32,33 @@
 
    <% } %>
 
+   <div class="fixed-action-btn">
+      <a class="btn-floating btn-large" style = "background-color: #36D1DC !important">
+         <i class="fa fa-share-alt"></i>
+      </a>
+      <ul>
+         <li>
+            <a class="facebook btn-floating st-custom-button" data-network="facebook">
+               <i class="fa fa-facebook"></i>
+            </a>
+         </li>
+         <li>
+            <a class="twitter btn-floating st-custom-button" data-network="twitter">
+               <i class="fa fa-twitter"></i>
+            </a>
+         </li>
+         <li>
+            <a class="google btn-floating st-custom-button" data-network="googleplus">
+               <i class="fa fa-google-plus"></i>
+            </a>
+         </li>
+         <li>
+            <a class="whatsapp btn-floating st-custom-button" data-network="whatsapp">
+               <i class="fa fa-whatsapp"></i>
+            </a>
+         </li>
+      </ul>
+   </div>
 
    <% if (isVisible) { %>
       <div class = "container" id = "userprofile-container">
