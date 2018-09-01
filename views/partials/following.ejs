@@ -1,0 +1,18 @@
+<% if (following.length > 0) { %>
+   <ul class = "collection">
+      <% following.forEach(person => { %>
+         <li class = "collection-item avatar">
+            <img src = "<%= person.avatar_url %>" class = "circle">
+            <span class = "title"><%= person.login %></span>
+            <button class = "btn waves-effect right"  style = "background-color:#2193b0 !important;">
+               <a href = "<%= person.html_url %>" target = "_block" class = "white-text">Visit page</a>
+            </button>
+         </li>
+      <% }); %>
+   </ul>
+<% } else { %>
+   <div style = "padding: 20px; width: 80%; border-radius: 10px; margin: auto; color: grey">
+      <h1 class = "center" style = "font-size: 110px;">Oh!!</h1>
+      <h4 class = "center" >You are not following anyone</h4>
+   </div>
+<% } %>
