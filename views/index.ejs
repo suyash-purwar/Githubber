@@ -33,13 +33,16 @@
             <div class = "col s8">
                <ul class = "tabs tabs-fixed-width z-depth-1 tab-demo" style = "box-shadow: none; border-bottom: 2px  #36D1DC solid">
                   <li class = "tab"><a class = "active" href = "#repos">Repositories</a></li>
-                  <li class = "tab"><a href = "#stars">Stars</a></li>
                   <li class = "tab"><a href = "#followers">Followers</a></li>
                   <li class = "tab"><a href = "#following">Following</span></a></li>
                </ul>
 
                <div id = "repos" >
                   <%- include('partials/repos', {repos: repos}) %>
+               </div>
+
+               <div id = "followers">
+                  <%- include('partials/followers', {followers: followers}) %>
                </div>
             </div>
          </div>

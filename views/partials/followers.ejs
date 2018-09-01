@@ -1,0 +1,18 @@
+<% if (followers.length > 0) { %>
+   <ul class = "collection">
+      <% followers.forEach(follower => { %>
+         <li class = "collection-item avatar">
+            <img src = "<%= follower.avatar_url %>" class = "circle">
+            <span class = "title"><%= follower.login %></span>
+            <button class = "btn waves-effect right"  style = "background-color:#2193b0 !important;">
+               <a href = "<%= follower.html_url %>" target = "_block" class = "white-text">Visit page</a>
+            </button>
+         </li>
+      <% }); %>
+   </ul>
+<% } else { %>
+   <div style = "padding: 20px; width: 80%; border-radius: 10px; margin: auto; color: grey">
+      <h1 class = "center" style = "font-size: 110px;">NO!</h1>
+      <h4 class = "center" >Followers</h4>
+   </div>
+<% } %>

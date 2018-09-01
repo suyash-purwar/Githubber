@@ -1,3 +1,6 @@
+const tabElem = document.querySelector(".tabs");
+var TabInstance = M.Tabs.init(tabElem, {});
+
 // Function for opening the Username input modal
 document.addEventListener('DOMContentLoaded', () => {
    const userSearchModal = document.querySelector("#modal");
