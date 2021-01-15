@@ -15,13 +15,13 @@ router.post('/', (request, response) => {
       axios.get(`https://api.github.com/users/${request.body.name}/following?client_id=${git_client.id}&client_secret=${git_client.secret}`),
       axios.get(`https://api.github.com/users/${request.body.name}/starred?client_id=${git_client.id}&client_secret=${git_client.secret}`)
    ])
-   .then(axios.spread((profileRes, reposRes, followersRes, followingRes, starredRepoRes) => {
+   .then(axios.spread((profile, repos, followers, following, starredRepo) => {
       response.render('index', { 
-         repos: filterReposData(reposRes),
-         followers: filterFollowersData(followersRes),
-         following: filterFollowingData(followingRes),
-         profile: returnProfileProps(profileRes),
-         starredRepo: filterStarredRepoData(starredRepoRes),
+         repos: filterReposData(repos),
+         followers: filterFollowersData(followers),
+         following: filterFollowingData(following),
+         profile: returnProfileProps(profile),
+         starredRepo: filterStarredRepoData(starredRepo),
          isVisible: true,
          type: 'success',
          showSuccessModal: true,
@@ -42,6 +42,7 @@ router.post('/', (request, response) => {
    });
 });
 
+// Returns profile data from the profile of user
 returnProfileProps = (profile) => {
    return  {
       loginName: profile.data.login,
@@ -59,6 +60,7 @@ returnProfileProps = (profile) => {
    }
 }
 
+// Filters and return user's repositories data
 filterReposData = (repos) => {
    return repos.data.map(repo => {
       return {
@@ -73,6 +75,7 @@ filterReposData = (repos) => {
    });
 }
 
+// Filters and returns user's followers data
 filterFollowersData = (followers) => {
    return followers.data.map(follower => {
       return {
@@ -83,6 +86,7 @@ filterFollowersData = (followers) => {
    });
 }
 
+// Filters and returns user's following data
 filterFollowingData = (following) => {
    return following.data.map(person => {
       return {
@@ -93,6 +97,7 @@ filterFollowingData = (following) => {
    });
 }
 
+// Filters and return user's starred repositories
 filterStarredRepoData = (starredRepo) => {
    return starredRepo.data.map(repo => {
       return {
