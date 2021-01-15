@@ -2,13 +2,18 @@ const express = require("express");
 const router = express.Router();
 const axios = require("axios");
 
+git_client = {
+   id: 'a1dc8059a2fe281dcb31',
+   secret: 'ce7948563dc52a43c157bbd9a7f28157541bf0fb'
+}
+
 router.post('/', (request, response) => {
    axios.all([
-      axios.get(`https://api.github.com/users/${request.body.name}?client_id=a1dc8059a2fe281dcb31&client_secret=ce7948563dc52a43c157bbd9a7f28157541bf0fb`),
-      axios.get(`https://api.github.com/users/${request.body.name}/repos?client_id=a1dc8059a2fe281dcb31&client_secret=ce7948563dc52a43c157bbd9a7f28157541bf0fb`),
-      axios.get(`https://api.github.com/users/${request.body.name}/followers?client_id=a1dc8059a2fe281dcb31&client_secret=ce7948563dc52a43c157bbd9a7f28157541bf0fb`),
-      axios.get(`https://api.github.com/users/${request.body.name}/following?client_id=a1dc8059a2fe281dcb31&client_secret=ce7948563dc52a43c157bbd9a7f28157541bf0fb`),
-      axios.get(`https://api.github.com/users/${request.body.name}/starred?client_id=a1dc8059a2fe281dcb31&client_secret=ce7948563dc52a43c157bbd9a7f28157541bf0fb`)
+      axios.get(`https://api.github.com/users/${request.body.name}?client_id=${git_client.id}&client_secret=${git_client.secret}`),
+      axios.get(`https://api.github.com/users/${request.body.name}/repos?client_id=${git_client.id}&client_secret=${git_client.secret}`),
+      axios.get(`https://api.github.com/users/${request.body.name}/followers?client_id=${git_client.id}&client_secret=${git_client.secret}`),
+      axios.get(`https://api.github.com/users/${request.body.name}/following?client_id=${git_client.id}&client_secret=${git_client.secret}`),
+      axios.get(`https://api.github.com/users/${request.body.name}/starred?client_id=${git_client.id}&client_secret=${git_client.secret}`)
    ])
    .then(axios.spread((profileRes, reposRes, followersRes, followingRes, starredRepoRes) => {
       response.render('index', { 
